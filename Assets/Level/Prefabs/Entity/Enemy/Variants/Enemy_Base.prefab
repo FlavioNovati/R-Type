@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2267500081967689898, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.760473
       objectReference: {fileID: 0}
     - target: {fileID: 2267500081967689898, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.3665124
       objectReference: {fileID: 0}
     - target: {fileID: 2267500081967689898, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50,7 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326566042942891640, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: ShootDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: MuzzleOffset.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: HeightChangeFrequency
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
