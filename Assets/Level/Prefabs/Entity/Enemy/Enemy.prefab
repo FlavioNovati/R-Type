@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4799510229069299586}
   - component: {fileID: 6028945293609052796}
   - component: {fileID: 8462388253694393950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4719950159849303626}
@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMovement: {fileID: 4799510229069299586}
   HeightChangeFrequency: 5
-  MaxHeightChange: 5
-  MinHeightChange: 2
-  RaycastDistance: 3
   ObjectOnDeath: {fileID: 4196704649784026892, guid: a2306c5edf5157d46a62e53380506bfd, type: 3}
+  MuzzleOffset: {x: 0, y: 0, z: 0}
+  ProjectileToShoot: {fileID: 3434917538295072727, guid: b5bd1d7ea9d26174f87eead1fe6e1c2a, type: 3}
+  ShootDelay: 1.5
 --- !u!114 &4799510229069299586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  MaxSpeed: {x: 1, y: 1}
 --- !u!50 &6028945293609052796
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4719950159849303626}
   - component: {fileID: 3374934535246409161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
