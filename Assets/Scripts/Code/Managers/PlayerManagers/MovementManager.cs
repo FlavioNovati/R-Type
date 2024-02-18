@@ -10,8 +10,8 @@ public class MovementManager : MonoBehaviour
     {
         Vector2 direction = Vector2.zero;
 
-        direction.x = Input.GetAxis("Horizontal");
-        direction.y = Input.GetAxis("Vertical");
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
 
         movement.SetDirection(direction.normalized);
     }
