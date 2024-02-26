@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private Movement MovementComponent;
-    [SerializeField] private float Damage = 1f;
+    [SerializeField] public float Damage { get; private set; } = 1f;
     [SerializeField] private Transform VFX_OnDeath;
     [SerializeField] private SpriteRenderer ProjectileSprite;
 

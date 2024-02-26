@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy")]
+    [SerializeField] float HP = 10f;
+    [SerializeField] int ScoreOnDefeat = 5;
     [Header("Movement")]
     [SerializeField] private Movement EnemyMovement;
     [SerializeField] private float HeightChangeFrequency = 1.5f;
-    //OnDeath
-    [Header("On Death")]
-    [SerializeField] private Transform ObjectOnDeath;
     [Header("Shooting")]
     [SerializeField] private Vector3 MuzzleOffset;
     [SerializeField] private Projectile ProjectileToShoot;
     [SerializeField] private float ShootDelay = 1.5f;
-
-    private Vector3 Direction = Vector2.left;
+    [Header("On Death")]
+    [SerializeField] private Transform ObjectOnDeath;
     
     private float ChangeHeightTime;
     private float ShootTime;
+    private Vector3 Direction = Vector2.left;
 
     private void Awake()
     {
@@ -78,12 +79,19 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Instantiate(ObjectOnDeath, transform.position, Quaternion.identity);
+        GameManager.OnIncrementScore?.Invoke(ScoreOnDefeat);
         Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Die();
+        Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+        if(projectile != null)
+        {
+            HP -= projectile.Damage;
+            if(HP < 0)
+                Die();
+        }
     }
 
     private void OnDrawGizmos()

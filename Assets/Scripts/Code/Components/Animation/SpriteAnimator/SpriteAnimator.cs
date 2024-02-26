@@ -16,11 +16,6 @@ public class SpriteAnimator : MonoBehaviour
     {
         Frequency = 1 / (float)Framerate;
     }
-
-    private void Start()
-    {
-        StartCoroutine(Animate());
-    }
     
     IEnumerator Animate()
     {
@@ -37,5 +32,15 @@ public class SpriteAnimator : MonoBehaviour
         } while (Loop);
         if (DestroyOnEnd)
             Destroy(this.gameObject);
+    }
+
+    public void OnEnable()
+    {
+        StartCoroutine(Animate());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }

@@ -9,11 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5765439398254139068}
+  - component: {fileID: 9029814529282489388}
   - component: {fileID: 1106735002310718888}
   - component: {fileID: 3952270813558351372}
-  - component: {fileID: 4219069943455175374}
-  - component: {fileID: 8269578649833984997}
-  m_Layer: 0
+  - component: {fileID: 1470090811298874409}
+  - component: {fileID: 5547871314166750970}
+  - component: {fileID: 450373740238621832}
+  - component: {fileID: 3204976384919498485}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779945391162992669}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,6 +39,19 @@ Transform:
   - {fileID: 2234309309998020868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9029814529282489388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779945391162992669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ce8ab9511136e4b99d6a7ad4748480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathVFX: {fileID: 3282153117144028280, guid: 6d322244e15318648ab8cdcc7410b12b, type: 3}
 --- !u!114 &1106735002310718888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,7 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b1563fdce852746af09bf48eeb9a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 3952270813558351372}
+  Movement: {fileID: 3952270813558351372}
+  Shooting:
+  - {fileID: 5547871314166750970}
+  - {fileID: 1470090811298874409}
 --- !u!114 &3952270813558351372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +82,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   MaxSpeed: {x: 6, y: 6}
---- !u!50 &4219069943455175374
+--- !u!114 &1470090811298874409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779945391162992669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13196dadaafffb64b9702e905bf2b016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MuzzleOffset: {x: 0.2, y: 0.45, z: 0}
+  ProjectileToShoot: {fileID: 6568503009583137994, guid: d804c725e0c21ad40b3bac518bee612a, type: 3}
+  ShootDelay: 1
+--- !u!114 &5547871314166750970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779945391162992669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13196dadaafffb64b9702e905bf2b016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MuzzleOffset: {x: 0.2, y: -0.45, z: 0}
+  ProjectileToShoot: {fileID: 6568503009583137994, guid: d804c725e0c21ad40b3bac518bee612a, type: 3}
+  ShootDelay: 1
+--- !u!50 &450373740238621832
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -86,11 +135,11 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8269578649833984997
+--- !u!61 &3204976384919498485
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +174,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -145,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2234309309998020868}
   - component: {fileID: 5213055599391287342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
