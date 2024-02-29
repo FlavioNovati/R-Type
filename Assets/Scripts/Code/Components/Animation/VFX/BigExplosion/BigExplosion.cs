@@ -27,6 +27,7 @@ public class BigExplosion : MonoBehaviour
             Instantiate(ExplosionPrefab, explosionPos, Quaternion.identity);
             yield return WaitTime;
         }
+        Destroy(this.gameObject);
     }
 
     private void OnDrawGizmos()

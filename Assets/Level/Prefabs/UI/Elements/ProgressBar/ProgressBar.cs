@@ -33,7 +33,7 @@ public class ProgressBar : MonoBehaviour
             curveProgress = AnimationCurve.Evaluate(progress);
             ProgressImage.fillAmount = startFill + (curveProgress * diffFill);
 
-            progress += Time.deltaTime;
+            progress += Time.deltaTime * AnimationSpeed;
             yield return null;
         }
     }

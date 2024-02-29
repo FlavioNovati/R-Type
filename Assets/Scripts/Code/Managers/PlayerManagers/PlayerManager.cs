@@ -6,13 +6,15 @@ public class PlayerManager : MonoBehaviour
     public static Action<float> OnHealthChanged;
 
     [SerializeField] private Transform DeathVFX;
-    
-    private float HP = 10f;
+    [SerializeField] private float PlayerHp = 25f;
+    public static float HP = 25f;
 
+    private float MaxHealth;
 
-    private void Start()
+    private void Awake()
     {
-        OnHealthChanged(HP);
+        HP = PlayerHp;
+        MaxHealth = HP;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -20,14 +22,28 @@ public class PlayerManager : MonoBehaviour
         Projectile projectile = collision.gameObject.GetComponent<Projectile>();
         if (projectile != null)
         {
-            HP -= projectile.Damage;
-            OnHealthChanged(HP);
-            if(HP <= 0)
-            {
-                GameManager.OnPlayerDeath?.Invoke();
-                Instantiate(DeathVFX, transform.position, transform.rotation);
-            }
+            OnHealthChanged(-projectile.Damage);
         }
+    }
+
+    private void UpdateHp(float value)
+    {
+        HP += value;
+
+        if (HP > MaxHealth)
+            HP = MaxHealth;
+
+        if (HP <= 0)
+        {
+            GameManager.OnPlayerDeath?.Invoke();
+            Instantiate(DeathVFX, transform.position, transform.rotation);
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        OnHealthChanged += UpdateHp;
     }
 
     private void OnDisable()

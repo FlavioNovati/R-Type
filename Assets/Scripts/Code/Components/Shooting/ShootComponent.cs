@@ -7,32 +7,17 @@ public class ShootComponent : MonoBehaviour
     [Header("Shooting")]
     [SerializeField] private Vector3 MuzzleOffset;
     [SerializeField] private Projectile ProjectileToShoot;
-    [SerializeField] private float ShootDelay = 1.5f;
+    [SerializeField] private float ShootDelay = 5f;
 
-    private float ShootTime;
-    private void Awake()
-    {
-        ShootTime = 0f;
-    }
+    private float ShootTime = 0f;
 
     public void Shoot()
     {
-        if (ShootTime <= 0f)
+        if (Time.time >= ShootTime)
         {
-            StopAllCoroutines();
-            ShootTime = ShootDelay;
-            StartCoroutine(DecreaseTimer());
+            ShootTime = Time.time + ShootDelay;
             Projectile bullet = Instantiate(ProjectileToShoot, transform.position + MuzzleOffset, Quaternion.identity);
             bullet.SetDirection(Vector3.right);
-        }
-    }
-
-    IEnumerator DecreaseTimer()
-    {
-        while(ShootTime > 0f)
-        {
-            ShootTime -= Time.fixedDeltaTime;
-            yield return null;
         }
     }
 

@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnPlayerDeath += () => this.enabled = false;
         GameManager.OnPlayerDeath += () => Movement.SetDirection(Vector2.zero);
+        GameManager.OnPlayerDeath += () => this.enabled = false;
     }
 }

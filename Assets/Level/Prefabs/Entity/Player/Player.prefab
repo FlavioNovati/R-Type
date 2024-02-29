@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathVFX: {fileID: 3282153117144028280, guid: 6d322244e15318648ab8cdcc7410b12b, type: 3}
+  PlayerHp: 25
 --- !u!114 &1106735002310718888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   MaxSpeed: {x: 6, y: 6}
+  RigidBody: {fileID: 450373740238621832}
 --- !u!114 &1470090811298874409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MuzzleOffset: {x: 0.2, y: 0.45, z: 0}
   ProjectileToShoot: {fileID: 6568503009583137994, guid: d804c725e0c21ad40b3bac518bee612a, type: 3}
-  ShootDelay: 1
+  ShootDelay: 0.5
 --- !u!114 &5547871314166750970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MuzzleOffset: {x: 0.2, y: -0.45, z: 0}
   ProjectileToShoot: {fileID: 6568503009583137994, guid: d804c725e0c21ad40b3bac518bee612a, type: 3}
-  ShootDelay: 1
+  ShootDelay: 0.5
 --- !u!50 &450373740238621832
 Rigidbody2D:
   serializedVersion: 4

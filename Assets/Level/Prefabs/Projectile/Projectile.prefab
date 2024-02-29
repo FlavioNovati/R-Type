@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2318505601509875032}
   - component: {fileID: 5878920820696128502}
-  - component: {fileID: 131995098796621833}
   - component: {fileID: 8126767898357168453}
   - component: {fileID: 7460320617568016678}
   m_Layer: 0
@@ -48,24 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241eab046b614bf4e9834129bc384e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementComponent: {fileID: 131995098796621833}
-  Damage: 1
   VFX_OnDeath: {fileID: 4196704649784026892, guid: ca4daf2b41dd28a4e83eeac20f84ab87, type: 3}
   ProjectileSprite: {fileID: 3792268294775854274}
---- !u!114 &131995098796621833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832165337442709598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d481821c725bc0d4e836a89a8cd9c61e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   Speed: 10
-  MaxSpeed: {x: 10, y: 1}
 --- !u!61 &8126767898357168453
 BoxCollider2D:
   m_ObjectHideFlags: 0

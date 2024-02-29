@@ -48,12 +48,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0eab3a98768f749bf63e5f371e0b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 9
+  ScoreOnDefeat: 1
+  InvulnerabilityTime: 1
   EnemyMovement: {fileID: 4799510229069299586}
   HeightChangeFrequency: 5
-  ObjectOnDeath: {fileID: 4196704649784026892, guid: a2306c5edf5157d46a62e53380506bfd, type: 3}
   MuzzleOffset: {x: 0, y: 0, z: 0}
   ProjectileToShoot: {fileID: 3434917538295072727, guid: b5bd1d7ea9d26174f87eead1fe6e1c2a, type: 3}
   ShootDelay: 1.5
+  ObjectOnDeath: {fileID: 4196704649784026892, guid: a2306c5edf5157d46a62e53380506bfd, type: 3}
+  DropProb: 0.2
+  DropOnDeath:
+  - {fileID: 2167687323113896513, guid: 9a3b85273a29c9e489fec5dab5f767a0, type: 3}
+  - {fileID: 9162545616367687645, guid: f7e9a65d370f05741b60bed9d35d3e91, type: 3}
+  - {fileID: 8486461075275257963, guid: 614866b32291e7c4b9954436274d50cf, type: 3}
+  DestroyOnDeath: 1
 --- !u!114 &4799510229069299586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   MaxSpeed: {x: 1, y: 1}
+  RigidBody: {fileID: 0}
 --- !u!50 &6028945293609052796
 Rigidbody2D:
   serializedVersion: 4

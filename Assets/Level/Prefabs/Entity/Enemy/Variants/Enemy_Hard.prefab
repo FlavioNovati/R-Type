@@ -66,12 +66,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: ScoreOnDefeat
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: MuzzleOffset.x
       value: -0.65
       objectReference: {fileID: 0}
+    - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: ProjectileToShoot
+      value: 
+      objectReference: {fileID: 3434917538295072727, guid: 89a787e20d98a174f8e75f9b7f4e81c2, type: 3}
     - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: HeightChangeFrequency
       value: 0.9

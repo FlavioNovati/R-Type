@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 131995098796621833, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: Speed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 131995098796621833, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: MaxSpeed.x
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1832165337442709598, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
       propertyPath: m_Name
       value: PlayerProjectile
@@ -55,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 2318505601509875032, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878920820696128502, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: Speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878920820696128502, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: ProjectileDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7210704864831938040, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
       propertyPath: m_Layer

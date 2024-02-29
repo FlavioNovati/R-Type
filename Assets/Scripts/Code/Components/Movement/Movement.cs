@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float Speed = 5f;
-    [SerializeField] Vector2 MaxSpeed = Vector2.one;
+    [SerializeField] public float Speed = 5f;
+    [SerializeField] public Vector2 MaxSpeed = Vector2.one;
 
-    Rigidbody2D RigidBody;
+    public Rigidbody2D RigidBody;
 
     private void Awake()
     {

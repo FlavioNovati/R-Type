@@ -8,6 +8,8 @@ public class SpawnerManager : MonoBehaviour
     private int CurrentSpawnIndex = 0;
     private float SpawnDelay;
 
+    private bool AllowSpawn = true;
+
     private void Awake()
     {
         CurrentSpawnIndex = 0;
@@ -16,23 +18,26 @@ public class SpawnerManager : MonoBehaviour
     private void FixedUpdate()
     {
         //Change Spawner
-        if (Spawners[CurrentSpawnIndex].SpawnEndDistance - transform.position.x <= 0f)
+        if(AllowSpawn)
         {
-            CurrentSpawnIndex++;
-            Debug.Log("NewSpawner: " + CurrentSpawnIndex);
-            SpawnDelay = Spawners[CurrentSpawnIndex].DelayBetweenSpawn;
+            if (Spawners[CurrentSpawnIndex].SpawnEndDistance - transform.position.x <= 0f)
+            {
+                CurrentSpawnIndex++;
+                if (CurrentSpawnIndex < Spawners.Length)
+                    SpawnDelay = Spawners[CurrentSpawnIndex].DelayBetweenSpawn;
+                else
+                    AllowSpawn = false;
+            }
+            //Decrease timers
+            SpawnDelay -= Time.fixedDeltaTime;
+            //Spawn
+            if (SpawnDelay <= 0f)
+            {
+                Spawn();
+                SpawnDelay = Spawners[CurrentSpawnIndex].DelayBetweenSpawn;
+            }
         }
-        //Decrease timers
-        SpawnDelay -= Time.fixedDeltaTime;
-        //Spawn
-        if (SpawnDelay <= 0f)
-        {
-            Spawn();
-            SpawnDelay = Spawners[CurrentSpawnIndex].DelayBetweenSpawn;
-        }
-
     }
-
 
     private void Spawn()
     {
@@ -45,9 +50,15 @@ public class SpawnerManager : MonoBehaviour
         Instantiate(Spawners[CurrentSpawnIndex].ObjectToSpawn, spawnPosition + transform.position, Quaternion.identity);
     }
 
+    private void OnEnable()
+    {
+        GameManager.OnPlayerDeath += () => this.enabled = false;
+    }
 
     private void OnDrawGizmos()
     {
+        if (Application.isPlaying)
+            return;
         Gizmos.color = Spawners[CurrentSpawnIndex].GizsmoColor;
         Gizmos.DrawWireCube(transform.position, new Vector3(SpawnArea.x, SpawnArea.y, 0f));
 
