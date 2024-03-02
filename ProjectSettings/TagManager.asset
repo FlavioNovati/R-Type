@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - KillZone
   - Water
   - UI
   - Bounds
@@ -16,7 +16,7 @@ TagManager:
   - Player
   - EnemyProjectile
   - PlayerProjectile
-  - 
+  - TriggerBoss
   - 
   - 
   - 

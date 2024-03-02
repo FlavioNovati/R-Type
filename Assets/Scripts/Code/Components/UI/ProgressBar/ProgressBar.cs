@@ -37,5 +37,4 @@ public class ProgressBar : MonoBehaviour
             yield return null;
         }
     }
-
 }

@@ -12,8 +12,7 @@ public class Boss : MonoBehaviour
 
     private void Awake()
     {
-        EnemyComponent = GetComponent<Enemy>();
-        EnemyComponent.EnemyDestroyed += () => StartCoroutine(BossKilled());
+        EnemyComponent = GetComponent<Enemy>();;
     }
 
     private IEnumerator BossKilled()
@@ -36,5 +35,7 @@ public class Boss : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyComponent.enabled = true;
+        EnemyComponent.EnemyDestroyed += () => StartCoroutine(BossKilled());
+        EnemyComponent.InitialInvulnerability();
     }
 }

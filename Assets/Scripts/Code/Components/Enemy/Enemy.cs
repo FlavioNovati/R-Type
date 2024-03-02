@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -14,6 +15,8 @@ public class Enemy : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private Movement EnemyMovement;
     [SerializeField] private float HeightChangeFrequency = 1.5f;
+    [SerializeField] private float MaxHeight = 4.3f;
+    [SerializeField] private float MinHeight = -4.3f;
     [Header("Shooting")]
     [SerializeField] private Vector3 MuzzleOffset;
     [SerializeField] private Projectile ProjectileToShoot;
@@ -43,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Invulnerability());
+        InitialInvulnerability();
     }
 
     private void FixedUpdate()
@@ -55,6 +58,13 @@ public class Enemy : MonoBehaviour
             ChangeHeightTime = HeightChangeFrequency;
             ChangeDirection();
         }
+
+        if (transform.position.y > MaxHeight)
+            SetDir(Vector2.down);
+
+        if (transform.position.y < MinHeight)
+            SetDir(Vector2.up);
+
         //move to the left
         EnemyMovement.SetDirection(Direction);
 
@@ -75,10 +85,23 @@ public class Enemy : MonoBehaviour
         //reset Direction
         Direction = Vector2.left;
         //get new direction
+
         float heightChange = UnityEngine.Random.Range(-1f, 1f);
+        //limit direction
+        if(transform.position.y > MaxHeight)
+            heightChange = -1;
+        if(transform.position.y < MinHeight)
+            heightChange = +1;
+        
         Direction += heightChange * Vector3.up;
         //Reset Timer
         ChangeHeightTime = HeightChangeFrequency;
+    }
+
+    private void SetDir(Vector2 dir)
+    {
+        Direction = Vector2.left;
+        Direction += new Vector3(dir.x, dir.y, 0f);
     }
 
     private void DecreaseTimers()
@@ -108,6 +131,11 @@ public class Enemy : MonoBehaviour
         EnemyDestroyed();
         if(DestroyOnDeath)
             Destroy(gameObject);
+    }
+
+    public void InitialInvulnerability()
+    {
+        StartCoroutine(Invulnerability());
     }
 
     private IEnumerator Invulnerability()
