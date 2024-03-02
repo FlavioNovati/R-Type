@@ -631,11 +631,11 @@ MonoBehaviour:
     SpawnEndDistance: 50
     GizsmoColor: {r: 0, g: 1, b: 0.019607782, a: 1}
   - ObjectToSpawn: {fileID: 4498225788178218047, guid: cfd6d9f773184214f8322cd0c2b3152a, type: 3}
-    DelayBetweenSpawn: 2.5
+    DelayBetweenSpawn: 1.5
     SpawnEndDistance: 110
     GizsmoColor: {r: 1, g: 0, b: 0, a: 1}
   - ObjectToSpawn: {fileID: 1975350895746307382, guid: f177148732c9c0042adfcae4b2c8bd83, type: 3}
-    DelayBetweenSpawn: 3
+    DelayBetweenSpawn: 1.8
     SpawnEndDistance: 170
     GizsmoColor: {r: 0.94275045, g: 0, b: 1, a: 1}
   SpawnArea: {x: 3, y: 7.5}

@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1832165337442709598, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
       propertyPath: m_Name
-      value: EnemyProjectile
+      value: BossProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 1832165337442709598, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
       propertyPath: m_Layer
@@ -58,6 +58,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2318505601509875032, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792268294775854274, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792268294775854274, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8795562
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792268294775854274, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7210704864831938040, guid: 99bb65095aab7364d9f25f60f7a245cd, type: 3}

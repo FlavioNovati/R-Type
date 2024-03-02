@@ -56,9 +56,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ccb0367b352036e4499afcea893f6723, type: 3}
+    - target: {fileID: 4799510229069299586, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: Speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: HP
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: ShootDelay
@@ -67,6 +71,14 @@ PrefabInstance:
     - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
       propertyPath: MuzzleOffset.x
       value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: ProjectileToShoot
+      value: 
+      objectReference: {fileID: 3434917538295072727, guid: f8fdbf2bcd472d74aa2bbcb3695df7fa, type: 3}
+    - target: {fileID: 6117003700252507182, guid: 8c124039f950b9e438008d3580ceb849, type: 3}
+      propertyPath: HeightChangeFrequency
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
